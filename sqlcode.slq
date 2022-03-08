@@ -39,3 +39,17 @@ create Table recipes(
   instruction text
   public_or_private binary
 );
+
+insert into Users(password, name , username, cooking_type, address)
+values ('password12', 'palmer', 'palmermex', 'fry', '150 stratford ln'),
+('tagman123', 'tag', 'thatch', 'french', '2244 Ramona'),
+('sheri5566', 'sheryl', 'sheridaho', 'southwest', '202 yeayea');
+
+select * from Users;
+
+ insert into ingredients (category, name)
+ values('vegetable', 'carrot'),
+ ('meat', 'pork chop'),
+ ('dairy', 'whole milk');
+
+select * from ingredients;
