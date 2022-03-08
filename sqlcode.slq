@@ -1,0 +1,41 @@
+create Table Users(
+	user_id SERIAL PRIMARY KEY
+  password varchar(10)
+  name varchar(10)
+  username varchar(10) UNIQUE
+  cooking_type varchar(10)
+  address varchar(20)
+);
+
+create Table groceryList(
+	list_id SERIAL PRIMARY KEY
+  price float
+  ingredient_id integer REFRENCES ingredients(ingredient_id)
+	user_id integer REFRENCES users(user_id)
+);
+
+create Table rating(
+	rating_id SERIAL PRIMARY KEY
+  category varchar(15)
+  recipe_id integer REFRENCES recipes(recipe_id)
+	user_id integer REFRENCES users(user_id)
+);
+
+create Table ingredients(
+	ingredient_id SERIAL PRIMARY KEY
+  category varchar(15)
+ 	name varchar(15)
+);
+
+create Table occasions(
+	occasion_id SERIAL PRIMARY KEY
+  ocasion_date date
+ 	recipe_id integer REFRENCES recipes(recipe_id)
+  user_id integer REFRENCES users(user_id)
+);
+create Table recipes(
+	recipe_id SERIAL PRIMARY KEY
+ 	ingredient_id integer REFRENCES ingredients(ingredient_id)
+  instruction text
+  public_or_private binary
+);
